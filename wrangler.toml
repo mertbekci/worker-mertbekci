@@ -1,0 +1,16 @@
+name = "worker-mertbekci"
+main = "src/index.ts"
+compatibility_date = "2023-02-26"
+workers_dev = true
+
+[vars]
+BASE_URL = "http://127.0.0.1:8787"
+
+# Override values for `--env production` usage
+[env.production]
+routes = [
+	{ pattern = "mertbekci.com", custom_domain = true }
+]
+
+[env.production.vars]
+BASE_URL = "https://mertbekci.com"
